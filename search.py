@@ -226,7 +226,7 @@ def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic):
 
             if successor_state not in visited:
                 fringe.push((current_cost + cost, successor_state),
-                            current_cost + cost + nullHeuristic(successor_state))
+                            current_cost + cost + heuristic(successor_state, problem))
                 visited.add(successor_state)
                 ancestor[successor_state] = (current_state, action)
     else:
